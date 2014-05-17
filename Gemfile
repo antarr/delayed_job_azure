@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'azure', '~> 0.6'
 gem 'delayed_job',  '~> 3.0.0'
