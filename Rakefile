@@ -15,30 +15,26 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "delayed_job_azure"
-  gem.homepage = "http://github.com/jordanyaker/delayed_job_azure"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "jordan.e.yaker@gmail.com"
-  gem.authors = ["Jordan Yaker"]
+  gem.homepage = "http://github.com/supportify/delayed_job_azure"
+  gem.license = "BSD"
+  gem.summary = %Q{Azure Queue backend for delayed_job}
+  gem.description = %Q{Azure Queue backend for delayed_job}
+  gem.email = "help@supportify.io"
+  gem.authors = ["Jordan Yaker", "Supportify, Inc."]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
 
 desc "Code coverage detail"
 task :simplecov do
   ENV['COVERAGE'] = "true"
-  Rake::Task['test'].execute
+  Rake::Task['spec'].execute
 end
 
-task :default => :test
+task :default => :spec
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
