@@ -14,16 +14,25 @@ Gem::Specification.new do |s|
   s.email = "help@supportify.io"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
-    "lib/delayed_job_azure.rb"
+    "delayed_job_azure.gemspec",
+    "lib/delayed/backend/actions.rb",
+    "lib/delayed/backend/azure.rb",
+    "lib/delayed/backend/azure_config.rb",
+    "lib/delayed/backend/version.rb",
+    "lib/delayed/backend/worker.rb",
+    "lib/delayed/serialization/azure.rb",
+    "lib/delayed_job_azure.rb",
+    "spec/.gitkeep"
   ]
   s.homepage = "http://github.com/supportify/delayed_job_azure"
   s.licenses = ["BSD"]

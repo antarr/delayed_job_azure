@@ -3,7 +3,7 @@ require_relative 'azure_config'
 module Delayed
   class Worker
     class << self
-      attr_accessor :config, :azure, :queues
+      attr_accessor :config, :azure, :queues,
                     :queue_name, :delay, :timeout, :expires_in, :available_priorities
 
       def configure
