@@ -74,7 +74,7 @@ module Delayed
         end
 
         def queue_name(priority)
-          "#{Delayed::Worker.queue_name}_#{priority || 0}"
+          "#{Delayed::Worker.queue_name}-#{priority || 0}"
         end
       end
     end

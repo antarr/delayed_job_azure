@@ -119,7 +119,7 @@ module Delayed
         private
 
         def queue_name
-          "#{@queue_name}_#{@attributes[:priority] || 0}"
+          "#{@queue_name}-#{@attributes[:priority] || 0}"
         end
 
         def azure
