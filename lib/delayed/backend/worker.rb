@@ -3,8 +3,8 @@ require_relative 'azure_config'
 module Delayed
   class Worker
     class << self
-      attr_accessor :config, :azure, :queues,
-                    :queue_name, :delay, :timeout, :expires_in, :available_priorities
+      attr_accessor :config, :queue_name, :delay, :timeout, 
+                    :expires_in, :available_priorities
 
       def configure
         yield(config)
@@ -25,13 +25,20 @@ module Delayed
         @config ||= AzureConfig.new
       end
 
+      def azure
+        @azure ||= Azure::QueueService.new
+      end
+
+      def queues
+        unless @queues
+          @queues = Delayed::Worker.azure.list_queues
+          @queues.map! { |q| q.name } 
+        end
+        @queues
+      end
     end
   end
 end
-
-Delayed::Worker.azure = Azure::QueueService.new
-Delayed::Worker.queues = Delayed::Worker.azure.list_queues
-Delayed::Worker.queues.map! { |q| q.name } 
 
 # initialize with defaults
 Delayed::Worker.configure {}
