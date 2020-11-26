@@ -107,9 +107,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  azure (~> 0.6)
+  azure
   bundler (~> 1.0)
-  delayed_job (~> 4.1)
+  delayed_job
   jeweler (~> 2.0.1)
   rdoc (~> 3.12)
   rspec (>= 2.0)
