@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'azure'
 gem 'delayed_job'
+gem 'activesupport', '~> 6.0'
 
 group :development do
   gem "rdoc", "~> 3.12"
