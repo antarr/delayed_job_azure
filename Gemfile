@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'azure'
-gem 'delayed_job'
+gem 'delayed_job', '~> 4'
 gem 'activesupport', '~> 6.0'
 
 group :development do
